@@ -59,8 +59,6 @@ function tirarPrint() {
     allRadios.forEach(radio => {
         if (!radio.checked) {
             radio.parentElement.classList.add('hidden');
-        }else{
-            radio.parentElement.classList.add('hide-radio');
         }
     });
 
