@@ -98,6 +98,10 @@ label:hover {
     display: none;
 }
 
+.hide-radio {
+    visibility: hidden;
+}
+
 .logo {
     max-width: 300px;
     height: auto;
