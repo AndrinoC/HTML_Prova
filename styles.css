@@ -95,7 +95,7 @@ input[type="radio"] {
 
 .calc-area {
     margin-bottom: 5px;
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .button-area {
@@ -107,39 +107,23 @@ input[type="radio"] {
 
 button {
     padding: 5px;
-    font-size: 12px;
+    font-size: 20px;
     cursor: pointer;
     margin-top: 8px;
-    width: 75%;
-    border: none;
+    width: 100%;
     border-radius: 5px;
     background-color: #007bff;
+    border: none;
     color: #fff;
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-#print-btn {
-    background-color: #007bff;
-}
-
-#print-btn:hover {
-    background-color: #0056b3;
-}
-
-#copy-btn {
-    background-color: #28a745;
-}
-
-#copy-btn:hover {
-    background-color: #218838;
-}
-
 button:nth-child(1) {
-    background-color: #dc3545;
+    background-color: #3591dc;
 }
 
 button:nth-child(1):hover {
-    background-color: #c82333;
+    background-color: #286ea7;
 }
 
 button:nth-child(2) {
@@ -148,6 +132,22 @@ button:nth-child(2) {
 
 button:nth-child(2):hover {
     background-color: #e0a800;
+}
+
+button:nth-child(3) {
+    background-color: #fc0019;
+}
+
+button:nth-child(3):hover {
+    background-color: #e41d31;
+}
+
+button:nth-child(4) {
+    background-color: #494331;
+}
+
+button:nth-child(4):hover {
+    background-color: #3d382a;
 }
 
 button:hover {

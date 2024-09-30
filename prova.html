@@ -116,12 +116,10 @@
 				<input type="text" id="status" disabled>
 			</div>
             <div class="button-area">
-                <button id="print-btn" class="print-btn" onclick="window.print();">Imprimir</button>
-                <button id="copy-btn" class="print-btn" onclick="copiarDados()">Copiar Dados</button>
-            </div>
-            <div class="button-area">
-                <button onclick="resetQuiz()">Resetar Questionário</button>
-                <button onclick="toggleTheme()">Alternar Tema</button>
+                <button onclick="copiarDados()">Copiar</button>
+                <button onclick="tirarPrint()">Print</button>
+                <button onclick="resetQuiz()">Resetar</button>
+                <button onclick="toggleTheme()">Tema</button>
             </div>
 
             <div class="rules-section">
@@ -149,10 +147,10 @@
             </div>
         </div>
     </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
-    <script src="scripts.js"></script>
     <audio id="button-sound" src="button.wav"></audio>
+    <audio id="print-sound" src="photo.wav"></audio>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="scripts.js"></script>
 </body>
 
 </html>

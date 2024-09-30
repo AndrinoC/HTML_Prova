@@ -1,3 +1,12 @@
+document.addEventListener('DOMContentLoaded', (event) => {
+    document.getElementById('idade').addEventListener('input', validarIdade);
+    document.getElementById('idade').addEventListener('paste', (e) => {
+        setTimeout(() => validarIdade(), 0);
+    });
+
+    document.getElementById('id').addEventListener('input', validarID);
+});
+
 function calcular() {
     let totalScore = 0;
     const notas = document.querySelectorAll('input[type="radio"]:checked');
@@ -40,6 +49,24 @@ function copiarDados() {
     });
 
     playSound('button-sound');
+}
+
+function tirarPrint() {
+    html2canvas(document.querySelector(".container"), {
+        useCORS: true,
+        allowTaint: false,
+    }).then(function (canvas) {
+        const link = document.createElement('a');
+        link.href = canvas.toDataURL('image/png');
+        link.download = 'screenshot.png';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }).catch(function (error) {
+        console.error('Erro ao capturar a tela: ', error);
+    });
+
+    playSound('print-sound');
 }
 
 function toggleTheme() {
@@ -103,6 +130,3 @@ document.getElementById('idade').addEventListener('paste', (e) => {
 document.getElementById('id').addEventListener('paste', (e) => {
     setTimeout(() => validarID(), 0);
 });
-
-document.getElementById('idade').addEventListener('input', validarIdade);
-document.getElementById('id').addEventListener('input', validarID);
