@@ -53,17 +53,18 @@ function copiarDados() {
 }
 
 function tirarPrint() {
-    setTimeout(() => {
-        html2canvas(document.body, { 
-            scale: window.devicePixelRatio,
-            useCORS: true
-        }).then(function (canvas) {
+    const container = document.querySelector('.container'); // Selecione o elemento que você deseja imprimir
+
+    domtoimage.toPng(container)
+        .then(function (dataUrl) {
             const link = document.createElement('a');
-            link.href = canvas.toDataURL('image/png');
-            link.download = 'screenshot.png';
+            link.download = 'print.png'; // Nome do arquivo que será baixado
+            link.href = dataUrl;
             link.click();
+        })
+        .catch(function (error) {
+            console.error('Erro ao gerar a imagem: ', error);
         });
-    }, 500);
 
     playSound('print-sound');
 }
