@@ -227,3 +227,15 @@ body.light-mode .rules-section {
         opacity: 1;
     }
 }
+
+@keyframes shake {
+    0% { transform: translate(0, 0); }
+    25% { transform: translate(3px, 3px); }
+    50% { transform: translate(-3px, -3px); }
+    75% { transform: translate(3px, -3px); }
+    100% { transform: translate(0, 0); }
+}
+
+.shake {
+    animation: shake 0.5s ease forwards;
+}

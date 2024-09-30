@@ -60,6 +60,15 @@ function resetQuiz() {
     document.getElementById('idade').value = null;
     document.getElementById('id').value = null;
 
+    const elementsToShake = document.querySelectorAll('.question-card');
+    elementsToShake.forEach(element => {
+        element.classList.add('shake');
+
+        setTimeout(() => {
+            element.classList.remove('shake');
+        }, 500);
+    });
+
     playSound('button-sound');
 }
 
