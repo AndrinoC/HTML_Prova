@@ -27,6 +27,8 @@ function calcular() {
     }
     document.getElementById('status').value = status;
 
+    document.body.offsetHeight;
+
     playSound('button-sound');
 }
 
@@ -55,16 +57,18 @@ function copiarDados() {
 function tirarPrint() {
     const container = document.querySelector('.container');
 
-    domtoimage.toPng(container)
-        .then(function (dataUrl) {
-            const link = document.createElement('a');
-            link.download = 'print.png';
-            link.href = dataUrl;
-            link.click();
-        })
-        .catch(function (error) {
-            console.error('Erro ao gerar a imagem: ', error);
-        });
+    setTimeout(() => {
+        domtoimage.toPng(container)
+            .then(function (dataUrl) {
+                const link = document.createElement('a');
+                link.download = 'print.png';
+                link.href = dataUrl;
+                link.click();
+            })
+            .catch(function (error) {
+                console.error('Erro ao gerar a imagem: ', error);
+            });
+    }, 100);
 
     playSound('print-sound');
 }
