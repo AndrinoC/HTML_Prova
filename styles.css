@@ -144,7 +144,6 @@ button:nth-child(1):hover {
 
 button:nth-child(2) {
     background-color: #ffc107;
-    color: #000;
 }
 
 button:nth-child(2):hover {
