@@ -53,12 +53,12 @@ function copiarDados() {
 }
 
 function tirarPrint() {
-    const container = document.querySelector('.container'); // Selecione o elemento que você deseja imprimir
+    const container = document.querySelector('.container');
 
     domtoimage.toPng(container)
         .then(function (dataUrl) {
             const link = document.createElement('a');
-            link.download = 'print.png'; // Nome do arquivo que será baixado
+            link.download = 'print.png';
             link.href = dataUrl;
             link.click();
         })
