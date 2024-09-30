@@ -39,8 +39,9 @@ function copiarDados() {
     const status = document.getElementById('status').value;
 
     const dataAtual = new Date().toLocaleDateString('pt-BR');
+    const horaAtual = new Date().toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
 
-    const resultadoTexto = `**Nome:** ${nome}\n**Passaporte:** ${passaporte}\n**Idade:** ${idade}\n**Data:** ${dataAtual}\n**Nota:** ${nota}\n**Status:** ${status}\n**Recrutador:** ${recrutador}`;
+    const resultadoTexto = `**Nome:** ${nome}\n**Passaporte:** ${passaporte}\n**Idade:** ${idade}\n**Data:** ${dataAtual} ${horaAtual}\n**Nota:** ${nota}\n**Status:** ${status}\n**Recrutador:** ${recrutador}`;
 
     navigator.clipboard.writeText(resultadoTexto).then(() => {
         alert('Dados copiados para a área de transferência!');
@@ -52,12 +53,17 @@ function copiarDados() {
 }
 
 function tirarPrint() {
-    html2canvas(document.body).then(function (canvas) {
-        const link = document.createElement('a');
-        link.href = canvas.toDataURL('image/png');
-        link.download = 'screenshot.png';
-        link.click();
-    });
+    setTimeout(() => {
+        html2canvas(document.body, { 
+            scale: window.devicePixelRatio,
+            useCORS: true
+        }).then(function (canvas) {
+            const link = document.createElement('a');
+            link.href = canvas.toDataURL('image/png');
+            link.download = 'screenshot.png';
+            link.click();
+        });
+    }, 500);
 
     playSound('print-sound');
 }
