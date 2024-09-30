@@ -52,18 +52,11 @@ function copiarDados() {
 }
 
 function tirarPrint() {
-    html2canvas(document.querySelector(".container"), {
-        useCORS: true,
-        allowTaint: false,
-    }).then(function (canvas) {
+    html2canvas(document.body).then(function (canvas) {
         const link = document.createElement('a');
         link.href = canvas.toDataURL('image/png');
         link.download = 'screenshot.png';
-        document.body.appendChild(link);
         link.click();
-        document.body.removeChild(link);
-    }).catch(function (error) {
-        console.error('Erro ao capturar a tela: ', error);
     });
 
     playSound('print-sound');
