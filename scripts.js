@@ -87,9 +87,6 @@ function validarID() {
     }
 }
 
-document.getElementById('idade').addEventListener('input', validarIdade);
-document.getElementById('id').addEventListener('input', validarID);
-
 document.getElementById('idade').addEventListener('paste', (e) => {
     setTimeout(() => validarIdade(), 0);
 });
@@ -97,3 +94,6 @@ document.getElementById('idade').addEventListener('paste', (e) => {
 document.getElementById('id').addEventListener('paste', (e) => {
     setTimeout(() => validarID(), 0);
 });
+
+document.getElementById('idade').addEventListener('input', validarIdade);
+document.getElementById('id').addEventListener('input', validarID);

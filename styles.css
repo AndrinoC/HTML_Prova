@@ -29,7 +29,8 @@ body {
     padding: 10px;
     box-sizing: border-box;
     overflow-y: auto;
-    border-right: 1px solid #ddd;
+    animation: slideInQuestions 1.5s ease-out forwards;
+    opacity: 0;
 }
 
 .question-card {
@@ -81,6 +82,8 @@ input[type="radio"] {
     justify-content: center;
     align-items: center;
     text-align: center;
+    animation: slideInCalc 1.5s ease-out forwards;
+    opacity: 0;
 }
 
 .calc-area {
@@ -201,4 +204,26 @@ body.light-mode .calc-section {
 
 body.light-mode .rules-section {
     background-color: #816c6c;
+}
+
+@keyframes slideInQuestions {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInCalc {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
