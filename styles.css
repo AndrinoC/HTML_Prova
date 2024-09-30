@@ -86,6 +86,13 @@ input[type="radio"] {
     opacity: 0;
 }
 
+.logo {
+    max-width: 300px;
+    height: auto;
+    display: block;
+    margin: 0px auto -10px auto;
+}
+
 .calc-area {
     margin-bottom: 5px;
     font-size: 12px;
