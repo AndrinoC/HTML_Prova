@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionário GTF</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="questions-container">
+            <div class="question-card">
+                <h4>7 códigos Q e seus respectivos significados</h4>
+                <label><input type="radio" name="nota1" value="0" onchange="calcular()"> Não soube nenhum</label>
+                <label><input type="radio" name="nota1" value="3" onchange="calcular()"> Acertou 3</label>
+                <label><input type="radio" name="nota1" value="5" onchange="calcular()"> Acertou 5</label>
+                <label><input type="radio" name="nota1" value="10" onchange="calcular()"> Acertou todos</label>
+            </div>
+
+            <div class="question-card">
+                <h4>Códigos de patrulha</h4>
+                <label><input type="radio" name="nota2" value="0" onchange="calcular()"> Acertou 1 ou menos</label>
+                <label><input type="radio" name="nota2" value="3" onchange="calcular()"> Acertou 3</label>
+                <label><input type="radio" name="nota2" value="6" onchange="calcular()"> Acertou 5</label>
+                <label><input type="radio" name="nota2" value="10" onchange="calcular()"> Acertou todos</label>
+            </div>
+
+            <div class="question-card">
+                <h4>Função do P1, P2, P3 e P4 na viatura</h4>
+                <label><input type="radio" name="nota3" value="0" onchange="calcular()"> Não sabe</label>
+                <label><input type="radio" name="nota3" value="5" onchange="calcular()"> Resposta média</label>
+                <label><input type="radio" name="nota3" value="10" onchange="calcular()"> Acertou todas</label>
+            </div>
+
+            <div class="question-card">
+                <h4>O que fazer quando o abordado se nega a descer do carro</h4>
+                <label><input type="radio" name="nota4" value="0" onchange="calcular()"> Não sabe</label>
+                <label><input type="radio" name="nota4" value="10" onchange="calcular()"> Acertou</label>
+            </div>
+
+            <div class="question-card">
+                <h4>GTF faz abordagem de Rotina</h4>
+                <label><input type="radio" name="nota5" value="0" onchange="calcular()"> Não sabe</label>
+                <label><input type="radio" name="nota5" value="5" onchange="calcular()"> Soube dizer todas as funções</label>
+            </div>
+
+            <div class="question-card">
+                <h4>Modulação de código 0</h4>
+                <label><input type="radio" name="nota6" value="0" onchange="calcular()"> Péssima</label>
+                <label><input type="radio" name="nota6" value="2" onchange="calcular()"> Ruim</label>
+                <label><input type="radio" name="nota6" value="10" onchange="calcular()"> Média</label>
+                <label><input type="radio" name="nota6" value="15" onchange="calcular()"> Perfeita</label>
+            </div>
+
+            <div class="question-card">
+                <h4>Modulação a caminho de uma ocorrência de disparos</h4>
+                <label><input type="radio" name="nota7" value="0" onchange="calcular()"> Péssima</label>
+                <label><input type="radio" name="nota7" value="2" onchange="calcular()"> Ruim</label>
+                <label><input type="radio" name="nota7" value="10" onchange="calcular()"> Média</label>
+                <label><input type="radio" name="nota7" value="15" onchange="calcular()"> Perfeita</label>
+            </div>
+
+            <div class="question-card">
+                <h4>Modulação de acompanhamento</h4>
+                <label><input type="radio" name="nota8" value="0" onchange="calcular()"> Péssima</label>
+                <label><input type="radio" name="nota8" value="2" onchange="calcular()"> Ruim</label>
+                <label><input type="radio" name="nota8" value="10" onchange="calcular()"> Média</label>
+                <label><input type="radio" name="nota8" value="15" onchange="calcular()"> Perfeita</label>
+            </div>
+
+            <div class="question-card">
+                <h4>O que é caixa 2</h4>
+                <label><input type="radio" name="nota9" value="0" onchange="calcular()"> Não sabe</label>
+                <label><input type="radio" name="nota9" value="5" onchange="calcular()"> Resposta aproximada</label>
+                <label><input type="radio" name="nota9" value="10" onchange="calcular()"> Respondeu corretamente</label>
+            </div>
+
+            <div class="question-card">
+                <h4>O que é GTF</h4>
+                <label><input type="radio" name="nota10" value="0" onchange="calcular()"> Não sabe</label>
+                <label><input type="radio" name="nota10" value="10" onchange="calcular()"> Acertou</label>
+            </div>
+
+            <div class="question-card">
+                <h4>Qual o nível de abordagem, 1, 2 ou 3</h4>
+                <label><input type="radio" name="nota11" value="0" onchange="calcular()"> Não sabe</label>
+                <label><input type="radio" name="nota11" value="5" onchange="calcular()"> Resposta média</label>
+                <label><input type="radio" name="nota11" value="10" onchange="calcular()"> Acertou todos</label>
+            </div>
+        </div>
+
+        <div class="calc-section">
+            <div class="info-section">
+                <h4>Informações de Recrutamento</h4>
+                <input type="text" id="nome" placeholder="Nome">
+                <input type="number" id="idade" placeholder="Idade" min="1" max="120" maxlength="3">
+            </div>
+            <div class="info-section">
+                <input type="number" id="id" placeholder="ID" min="0" max="99999999" maxlength="8">
+                <input type="text" id="recrutador" placeholder="Recrutador">
+            </div>
+			<h4>Cálculo da Nota</h4>
+			<div class="calc-area">
+				<label for="nota">Nota Final:</label>
+				<input type="text" id="nota" disabled>
+			</div>
+			<div class="calc-area">
+				<label for="status">Status:</label>
+				<input type="text" id="status" disabled>
+			</div>
+            <div class="button-area">
+                <button id="print-btn" class="print-btn" onclick="window.print();">Imprimir</button>
+                <button id="copy-btn" class="print-btn" onclick="copiarDados()">Copiar Dados</button>
+            </div>
+            <div class="button-area">
+                <button onclick="resetQuiz()">Resetar Questionário</button>
+                <button onclick="toggleTheme()">Alternar Tema</button>
+            </div>
+
+            <div class="rules-section">
+                <h4>
+                    <font color="#b50000">🔹 Pontuação: </font> <font>Menos de 40 pontos Reprovado</font>
+                </h4>
+
+                <h4>
+                    <font color="#b50000">🔹 Pontuação: </font> <font>Acima de 40 pontos Cadete e acima de 60 pontos Aspirante</font>
+                </h4>
+
+                <h4>
+                    <font color="#b50000">🔹 Modulação: </font> <font>Se não souber modular será reprovado.</font>
+                </h4>
+                <h4>
+                    <font color="#b50000">🔹 Cola ou suspeita de call externa: </font> <font>Pergunte a
+                            coloração dos códigos de patrulha, caso acerte zere a nota!</font>
+                </h4>
+                <h4>
+                    <font color="#b50000">🔹 Dificuldade para pular a barreira: </font> <font>Pule a
+                            pergunta e dê nota zero.</font>
+                </h4>
+                <h4>
+                    <font color="#b50000">🔹 Zaralho, falta de respeito ou qualquer outra alteração não
+                            deverá ser tolerada e o mesmo deverá ser expulso e punido, além de ser colocado na
+                            lista negra.</font>
+                </h4>
+                <h4>
+                    <font color="#b50000">🔹 O print desta prova é obrigatório e deverá estar anexado junto
+                            do resultado no email da GTF.</font>
+                </h4>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+    <script src="scripts.js"></script>
+    <audio id="button-sound" src="button.wav"></audio>
+</body>
+
+</html>
