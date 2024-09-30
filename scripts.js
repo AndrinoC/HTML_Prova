@@ -53,32 +53,41 @@ function copiarDados() {
 }
 
 function tirarPrint() {
-    const container = document.querySelector('.container');
-
-    const allRadios = document.querySelectorAll('input[type="radio"]');
-    allRadios.forEach(radio => {
-        if (!radio.checked) {
-            radio.parentElement.classList.add('hidden');
-        }
-    });
-
-    setTimeout(() => {
-        domtoimage.toPng(container)
-            .then(function (dataUrl) {
-                const link = document.createElement('a');
-                link.download = 'print.png';
-                link.href = dataUrl;
-                link.click();
-            })
-            .catch(function (error) {
-                console.error('Erro ao gerar a imagem: ', error);
-            })
-            .finally(() => {
-                allRadios.forEach(radio => {
-                    radio.parentElement.classList.remove('hidden');
+    function tirarPrint() {
+        const container = document.querySelector('.container');
+    
+        const allRadios = document.querySelectorAll('input[type="radio"]');
+        allRadios.forEach(radio => {
+            const label = radio.parentElement;
+            
+            if (!radio.checked) {
+                label.classList.add('hidden');
+            } else {
+                radio.classList.add('hide-radio');
+            }
+        });
+    
+        setTimeout(() => {
+            domtoimage.toPng(container)
+                .then(function (dataUrl) {
+                    const link = document.createElement('a');
+                    link.download = 'print.png';
+                    link.href = dataUrl;
+                    link.click();
+                })
+                .catch(function (error) {
+                    console.error('Erro ao gerar a imagem: ', error);
+                })
+                .finally(() => {
+                    allRadios.forEach(radio => {
+                        const label = radio.parentElement;
+                        label.classList.remove('hidden');
+                        radio.classList.remove('hide-radio');
+                    });
                 });
-            });
-    }, 100);
+        }, 100);
+        playSound('print-sound');
+    }    
 
     playSound('print-sound');
 }
