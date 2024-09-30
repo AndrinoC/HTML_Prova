@@ -60,7 +60,7 @@ function tirarPrint() {
         if (!radio.checked) {
             radio.parentElement.classList.add('hidden');
         }else{
-            radio.parentElement.classList.add('hide-radio');
+            radio.classList.add('hide-radio');
         }
     });
 
@@ -80,7 +80,7 @@ function tirarPrint() {
                     radio.parentElement.classList.remove('hidden');
                 });
                 allRadios.forEach(radio => {
-                    radio.parentElement.classList.remove('hide-radio');
+                    radio.classList.remove('hide-radio');
                 });
             });
     }, 100);
