@@ -27,8 +27,6 @@ function calcular() {
     }
     document.getElementById('status').value = status;
 
-    document.body.offsetHeight;
-
     playSound('button-sound');
 }
 
@@ -57,6 +55,13 @@ function copiarDados() {
 function tirarPrint() {
     const container = document.querySelector('.container');
 
+    const allRadios = document.querySelectorAll('input[type="radio"]');
+    allRadios.forEach(radio => {
+        if (!radio.checked) {
+            radio.parentElement.classList.add('hidden');
+        }
+    });
+
     setTimeout(() => {
         domtoimage.toPng(container)
             .then(function (dataUrl) {
@@ -67,6 +72,11 @@ function tirarPrint() {
             })
             .catch(function (error) {
                 console.error('Erro ao gerar a imagem: ', error);
+            })
+            .finally(() => {
+                allRadios.forEach(radio => {
+                    radio.parentElement.classList.remove('hidden');
+                });
             });
     }, 100);
 

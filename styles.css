@@ -94,6 +94,10 @@ label:hover {
     opacity: 0;
 }
 
+.hidden {
+    display: none;
+}
+
 .logo {
     max-width: 300px;
     height: auto;
