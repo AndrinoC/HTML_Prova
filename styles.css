@@ -99,7 +99,7 @@ label:hover {
 }
 
 .hide-radio {
-    visibility: hidden;
+    appearance: none;
 }
 
 .logo {
