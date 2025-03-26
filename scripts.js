@@ -23,7 +23,7 @@ function calcular() {
     } else if (totalScore < 60) {
         status = 'Estagiário';
     } else {
-        status = 'Agente de 3ª Classe';
+        status = 'AGT 3ª Classe';
     }
     document.getElementById('status').value = status;
 
