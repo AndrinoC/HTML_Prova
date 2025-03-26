@@ -21,9 +21,9 @@ function calcular() {
     if (totalScore < 40) {
         status = 'Reprovado';
     } else if (totalScore < 60) {
-        status = 'Cadete';
+        status = 'Estagiário';
     } else {
-        status = 'Aspirante';
+        status = 'Agente de 3ª Classe';
     }
     document.getElementById('status').value = status;
 
