@@ -18,9 +18,9 @@ function calcular() {
     document.getElementById('nota').value = totalScore;
 
     let status;
-    if (totalScore < 40) {
+    if (totalScore < 45) {
         status = 'Reprovado';
-    } else if (totalScore < 60) {
+    } else if (totalScore < 90) {
         status = 'Estagiário';
     } else {
         status = 'AGT 3ª Classe';
