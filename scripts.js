@@ -20,7 +20,7 @@ function calcular() {
     let status;
     if (totalScore < 45) {
         status = 'Reprovado';
-    } else if (totalScore < 90) {
+    } else if (totalScore < 80) {
         status = 'Estagiário';
     } else {
         status = 'AGT 3ª Classe';
