@@ -53,37 +53,78 @@ function copiarDados() {
 }
 
 function tirarPrint() {
+    console.log('tirarPrint: Iniciando...');
     const container = document.querySelector('.container');
+    if (!container) {
+        console.error('tirarPrint: Elemento .container não encontrado!');
+        return;
+    }
 
     const allRadios = document.querySelectorAll('input[type="radio"]');
-    allRadios.forEach(radio => {
-        if (!radio.checked) {
-            radio.parentElement.classList.add('hidden');
-        }else{
-            radio.classList.add('hide-radio');
-        }
-    });
+    console.log(`tirarPrint: Encontrados ${allRadios.length} radios.`);
+
+    try {
+        allRadios.forEach(radio => {
+            if (!radio.checked) {
+                if (radio.parentElement && radio.parentElement.tagName === 'LABEL') {
+                    radio.parentElement.classList.add('hidden');
+                } else {
+                    console.warn('tirarPrint: Rádio sem label pai:', radio);
+                }
+            } else {
+                radio.classList.add('hide-radio');
+            }
+        });
+        console.log('tirarPrint: Classes de ocultação adicionadas.');
+    } catch (e) {
+        console.error('tirarPrint: Erro ao adicionar classes:', e);
+         allRadios.forEach(radio => {
+             if (radio.parentElement && radio.parentElement.tagName === 'LABEL') {
+                radio.parentElement.classList.remove('hidden');
+             }
+             radio.classList.remove('hide-radio');
+         });
+        return;
+    }
+
 
     setTimeout(() => {
+        console.log('tirarPrint: Dentro do setTimeout, antes de domtoimage.');
+        if (typeof domtoimage === 'undefined') {
+             console.error('tirarPrint: Biblioteca domtoimage não está definida!');
+             allRadios.forEach(radio => {
+                if (radio.parentElement && radio.parentElement.tagName === 'LABEL') {
+                    radio.parentElement.classList.remove('hidden');
+                }
+                radio.classList.remove('hide-radio');
+             });
+             return;
+        }
+
         domtoimage.toPng(container)
             .then(function (dataUrl) {
+                console.log('tirarPrint: domtoimage.toPng SUCESSO.');
                 const link = document.createElement('a');
-                link.download = 'print.png';
+                link.download = 'recrutamento_resultado.png';
                 link.href = dataUrl;
                 link.click();
+                console.log('tirarPrint: Download iniciado.');
             })
             .catch(function (error) {
-                console.error('Erro ao gerar a imagem: ', error);
+                console.error('tirarPrint: domtoimage.toPng ERRO:', error);
+                alert('Ocorreu um erro ao gerar o print. Verifique o console (F12).');
             })
             .finally(() => {
+                console.log('tirarPrint: Bloco finally - restaurando classes.');
                 allRadios.forEach(radio => {
-                    radio.parentElement.classList.remove('hidden');
-                });
-                allRadios.forEach(radio => {
+                     if (radio.parentElement && radio.parentElement.tagName === 'LABEL') {
+                        radio.parentElement.classList.remove('hidden');
+                     }
                     radio.classList.remove('hide-radio');
                 });
+                 console.log('tirarPrint: Classes restauradas.');
             });
-    }, 100);
+    }, 300);
 
     playSound('print-sound');
 }
@@ -137,7 +178,7 @@ function validarID() {
     const idInput = document.getElementById('id');
     const valorId = idInput.value;
 
-    if (valorId.length > 8 || valorId < 0 || valorId > 9999999) {
+    if (valorId.length > 8 || valorId < 0 || valorId > 99999999) {
         idInput.value = valorId.slice(0, 8);
     }
 }
