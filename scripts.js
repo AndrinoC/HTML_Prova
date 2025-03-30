@@ -137,7 +137,7 @@ function validarID() {
     const idInput = document.getElementById('id');
     const valorId = idInput.value;
 
-    if (valorId.length > 8 || valorId < 0 || valorId > 99999999) {
+    if (valorId.length > 8 || valorId < 0 || valorId > 9999999) {
         idInput.value = valorId.slice(0, 8);
     }
 }
