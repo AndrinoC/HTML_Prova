@@ -64,10 +64,12 @@ function calcular() {
     const statusInput = document.getElementById('status');
     if (totalScore < 43) {
         status = 'Reprovado';
-    } else if (totalScore < 80) {
+    } else if (totalScore < 61) {
         status = 'Estagiário';
-    } else {
+    } else if (totalScore < 90){
         status = 'AGT 3ª Classe';
+    } else{
+        status = 'AGT 3ª + TAP';
     }
     statusInput.value = status;
     statusInput.setAttribute('value', status);
@@ -98,8 +100,11 @@ function copiarDados() {
 
     const dataAtual = new Date().toLocaleDateString('pt-BR');
     const horaAtual = new Date().toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
-    const resultadoTexto = `**Nome:** ${nome}\n**Passaporte:** ${passaporte}\n**Idade:** ${idade}\n**Data:** ${dataAtual} ${horaAtual}\n**Nota:** ${nota}\n**Status:** ${status}\n**Recrutador:** ${recrutador}`;
-
+    let  resultadoTexto = `**Nome:** ${nome}\n**Passaporte:** ${passaporte}\n**Idade:** ${idade}\n**Data:** ${dataAtual} ${horaAtual}\n**Nota:** ${nota}\n**Status:** ${status}\n**Recrutador:** ${recrutador}`;
+    let notaNumerica = parseInt(nota, 10);
+    if (status === 'AGT 3ª + TAP' || notaNumerica > 90) {
+        resultadoTexto += `\n**Observação:** O conscrito se saiu acima da média e poderá realizar o TAP antecipadamente <@&1359030430589780018> <@&1264713299942051880>`;
+    }
     navigator.clipboard.writeText(resultadoTexto).then(() => {
         const copyButton = document.querySelector('button:nth-of-type(1)');
         const originalText = copyButton.textContent;
