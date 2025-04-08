@@ -16,85 +16,132 @@
     <div class="container">
         <div class="questions-container">
             <div class="question-card">
-                <h4>7 Códigos Q e Seus Respectivos Significados</h4>
-                <label><input type="radio" name="nota1" value="0" onchange="calcular()"> Não soube nenhum</label>
-                <label><input type="radio" name="nota1" value="3" onchange="calcular()"> Acertou 3</label>
-                <label><input type="radio" name="nota1" value="5" onchange="calcular()"> Acertou 5</label>
-                <label><input type="radio" name="nota1" value="10" onchange="calcular()"> Acertou todos</label>
+                <h4>⭐7 Códigos Q e Seus Respectivos Significados</h4>
+                <div class="options-wrapper">
+                    <input type="radio" id="nota1_0" name="nota1" value="0" onchange="calcular()">
+                    <label for="nota1_0">Não soube nenhum</label>
+                    <input type="radio" id="nota1_5" name="nota1" value="5" onchange="calcular()">
+                    <label for="nota1_5">Acertou 3</label>
+                    <input type="radio" id="nota1_8" name="nota1" value="8" onchange="calcular()">
+                    <label for="nota1_8">Acertou 5</label>
+                    <input type="radio" id="nota1_15" name="nota1" value="15" onchange="calcular()">
+                    <label for="nota1_15">Acertou todos</label>
+                </div>
             </div>
 
             <div class="question-card">
-                <h4>Códigos de Patrulha</h4>
-                <label><input type="radio" name="nota2" value="0" onchange="calcular()"> Acertou 1 ou menos</label>
-                <label><input type="radio" name="nota2" value="3" onchange="calcular()"> Acertou 3</label>
-                <label><input type="radio" name="nota2" value="6" onchange="calcular()"> Acertou 5</label>
-                <label><input type="radio" name="nota2" value="10" onchange="calcular()"> Acertou todos</label>
+                <h4>⭐Códigos de Patrulha</h4>
+                <div class="options-wrapper">
+                    <input type="radio" id="nota2_0" name="nota2" value="0" onchange="calcular()">
+                    <label for="nota2_0">Acertou 1 ou menos</label>
+                    <input type="radio" id="nota2_5" name="nota2" value="5" onchange="calcular()">
+                    <label for="nota2_5">Acertou 3</label>
+                    <input type="radio" id="nota2_9" name="nota2" value="9" onchange="calcular()">
+                    <label for="nota2_9">Acertou 5</label>
+                    <input type="radio" id="nota2_15" name="nota2" value="15" onchange="calcular()">
+                    <label for="nota2_15">Acertou todos</label>
+                </div>
             </div>
 
             <div class="question-card">
                 <h4>Função do P1, P2, P3 e P4 na Viatura</h4>
-                <label><input type="radio" name="nota3" value="0" onchange="calcular()"> Não sabe</label>
-                <label><input type="radio" name="nota3" value="5" onchange="calcular()"> Resposta média</label>
-                <label><input type="radio" name="nota3" value="10" onchange="calcular()"> Acertou todas</label>
+                <div class="options-wrapper">
+                    <input type="radio" id="nota3_0" name="nota3" value="0" onchange="calcular()">
+                    <label for="nota3_0">Não sabe</label>
+                    <input type="radio" id="nota3_3" name="nota3" value="3" onchange="calcular()">
+                    <label for="nota3_3">Resposta média</label>
+                    <input type="radio" id="nota3_5" name="nota3" value="5" onchange="calcular()">
+                    <label for="nota3_5">Acertou todas</label>
+                </div>
             </div>
 
             <div class="question-card">
                 <h4>O que Fazer Quando o Abordado se Nega a Descer do Carro</h4>
-                <label><input type="radio" name="nota4" value="0" onchange="calcular()"> Não sabe</label>
-                <label><input type="radio" name="nota4" value="10" onchange="calcular()"> Acertou</label>
+                <div class="options-wrapper">
+                    <input type="radio" id="nota4_0" name="nota4" value="0" onchange="calcular()">
+                    <label for="nota4_0">Não sabe</label>
+                    <input type="radio" id="nota4_5" name="nota4" value="5" onchange="calcular()">
+                    <label for="nota4_5">Acertou</label>
+                </div>
             </div>
 
             <div class="question-card">
                 <h4>Lei de Miranda</h4>
-                <label><input type="radio" name="nota5" value="0" onchange="calcular()"> Não sabe</label>
-                <label><input type="radio" name="nota5" value="10" onchange="calcular()"> Acertou</label>
+                <div class="options-wrapper">
+                    <input type="radio" id="nota5_0" name="nota5" value="0" onchange="calcular()">
+                    <label for="nota5_0">Não sabe</label>
+                    <input type="radio" id="nota5_5" name="nota5" value="5" onchange="calcular()">
+                    <label for="nota5_5">Acertou</label>
+                </div>
             </div>
 
             <div class="question-card">
-                <h4>Modulação de Código 0</h4>
-                <label><input type="radio" name="nota6" value="0" onchange="calcular()"> Péssima</label>
-                <label><input type="radio" name="nota6" value="2" onchange="calcular()"> Ruim</label>
-                <label><input type="radio" name="nota6" value="5" onchange="calcular()"> Média</label>
-                <label><input type="radio" name="nota6" value="10" onchange="calcular()"> Perfeita</label>
+                <h4>⭐Modulação de Código 0</h4>
+                <div class="options-wrapper">
+                    <input type="radio" id="nota6_0" name="nota6" value="0" onchange="calcular()">
+                    <label for="nota6_0">Péssima</label>
+                    <input type="radio" id="nota6_3" name="nota6" value="3" onchange="calcular()">
+                    <label for="nota6_3">Ruim</label>
+                    <input type="radio" id="nota6_8" name="nota6" value="8" onchange="calcular()">
+                    <label for="nota6_8">Média</label>
+                    <input type="radio" id="nota6_15" name="nota6" value="15" onchange="calcular()">
+                    <label for="nota6_15">Perfeita</label>
+                </div>
             </div>
 
             <div class="question-card">
-                <h4>Modulação a Caminho de uma Ocorrência de Disparos</h4>
-                <label><input type="radio" name="nota7" value="0" onchange="calcular()"> Péssima</label>
-                <label><input type="radio" name="nota7" value="2" onchange="calcular()"> Ruim</label>
-                <label><input type="radio" name="nota7" value="5" onchange="calcular()"> Média</label>
-                <label><input type="radio" name="nota7" value="10" onchange="calcular()"> Perfeita</label>
+                <h4>⭐Modulação a Caminho de uma Ocorrência de Disparos</h4>
+                <div class="options-wrapper">
+                    <input type="radio" id="nota7_0" name="nota7" value="0" onchange="calcular()">
+                    <label for="nota7_0">Péssima</label>
+                    <input type="radio" id="nota7_3" name="nota7" value="3" onchange="calcular()">
+                    <label for="nota7_3">Ruim</label>
+                    <input type="radio" id="nota7_8" name="nota7" value="8" onchange="calcular()">
+                    <label for="nota7_8">Média</label>
+                    <input type="radio" id="nota7_15" name="nota7" value="15" onchange="calcular()">
+                    <label for="nota7_15">Perfeita</label>
+                </div>
             </div>
 
             <div class="question-card">
-                <h4>Modulação de Acompanhamento</h4>
-                <label><input type="radio" name="nota8" value="0" onchange="calcular()"> Péssima</label>
-                <label><input type="radio" name="nota8" value="2" onchange="calcular()"> Ruim</label>
-                <label><input type="radio" name="nota8" value="5" onchange="calcular()"> Média</label>
-                <label><input type="radio" name="nota8" value="10" onchange="calcular()"> Perfeita</label>
+                <h4>⭐Modulação de Acompanhamento</h4>
+                <div class="options-wrapper">
+                    <input type="radio" id="nota8_0" name="nota8" value="0" onchange="calcular()">
+                    <label for="nota8_0">Péssima</label>
+                    <input type="radio" id="nota8_3" name="nota8" value="3" onchange="calcular()">
+                    <label for="nota8_3">Ruim</label>
+                    <input type="radio" id="nota8_8" name="nota8" value="8" onchange="calcular()">
+                    <label for="nota8_8">Média</label>
+                    <input type="radio" id="nota8_15" name="nota8" value="15" onchange="calcular()">
+                    <label for="nota8_15">Perfeita</label>
+                </div>
             </div>
 
             <div class="question-card">
                 <h4>O que é Caixa 2</h4>
-                <label><input type="radio" name="nota9" value="0" onchange="calcular()"> Não sabe</label>
-                <label><input type="radio" name="nota9" value="5" onchange="calcular()"> Resposta aproximada</label>
-                <label><input type="radio" name="nota9" value="10" onchange="calcular()"> Respondeu corretamente</label>
-            </div>
-
-            <div class="question-card">
-                <h4>Qual a Função da PRF</h4>
-                <label><input type="radio" name="nota10" value="0" onchange="calcular()"> Não sabe</label>
-                <label><input type="radio" name="nota10" value="10" onchange="calcular()"> Acertou</label>
+                <div class="options-wrapper">
+                    <input type="radio" id="nota9_0" name="nota9" value="0" onchange="calcular()">
+                    <label for="nota9_0">Não sabe</label>
+                    <input type="radio" id="nota9_3" name="nota9" value="3" onchange="calcular()">
+                    <label for="nota9_3">Resposta aproximada</label>
+                    <input type="radio" id="nota9_5" name="nota9" value="5" onchange="calcular()">
+                    <label for="nota9_5">Respondeu corretamente</label>
+                </div>
             </div>
 
             <div class="question-card">
                 <h4>Diferença entre abordagem de rotina e abordagem suspeita</h4>
-                <label><input type="radio" name="nota11" value="0" onchange="calcular()"> Não sabe</label>
-                <label><input type="radio" name="nota11" value="5" onchange="calcular()"> Resposta média</label>
-                <label><input type="radio" name="nota11" value="10" onchange="calcular()"> Acertou todos</label>
+                <div class="options-wrapper">
+                    <input type="radio" id="nota10_0" name="nota10" value="0" onchange="calcular()">
+                    <label for="nota10_0">Não sabe</label>
+                    <input type="radio" id="nota10_3" name="nota10" value="3" onchange="calcular()">
+                    <label for="nota10_3">Resposta média</label>
+                    <input type="radio" id="nota10_5" name="nota10" value="5" onchange="calcular()">
+                    <label for="nota10_5">Acertou todos</label>
+                </div>
             </div>
         </div>
- 
+
         <div class="calc-section">
             <img src="logo.png" alt="Logo" class="logo">
             <h4>Informações de Recrutamento</h4>
@@ -106,51 +153,42 @@
                 <input type="number" id="id" placeholder="ID" min="0" max="99999999" maxlength="8">
                 <input type="text" id="recrutador" placeholder="Recrutador">
             </div>
-			<h4>Cálculo da Nota</h4>
-			<div class="calc-area">
-				<label class="cc-label" for="nota">Nota:</label>
-				<input type="text" id="nota" disabled>
-			</div>
-			<div class="calc-area">
-				<label class="cc-label" for="status">Status:</label>
-				<input type="text" id="status" disabled>
-			</div>
+            <h4>Cálculo da Nota</h4>
+            <div class="calc-area">
+                <label class="cc-label" for="nota">Nota:</label>
+                <input type="text" id="nota" disabled>
+            </div>
+            <div class="calc-area">
+                <label class="cc-label" for="status">Status:</label>
+                <input type="text" id="status" disabled>
+            </div>
             <div class="button-area">
                 <button onclick="copiarDados()">Copiar</button>
                 <button onclick="tirarPrint()">Print</button>
                 <button onclick="resetQuiz()">Limpar</button>
-                <button onclick="toggleTheme()">Tema</button>
             </div>
 
             <div class="rules-section">
-                <h4>
-                    <span class="highlight">🔹 Pontuação: </span> Menos de 40 pontos - Reprovado
-                </h4>
-                <h4>
-                    <span class="highlight">🔹 Pontuação: </span> Acima de 45 pontos - Estagiário, acima de 80 pontos - Agente de 3ª Classe
-                </h4>
-                <h4>
-                    <span class="highlight">🔹 Modulação: </span> Se não souber modular, será reprovado.
-                </h4>
-                <h4>
-                    <span class="highlight">🔹 Cola ou suspeita de call externa: </span> Pergunte a coloração dos códigos de patrulha. Caso acerte, zere a nota!
-                </h4>
-                <h4>
-                    <span class="highlight">🔹 Dificuldade para pular a barreira: </span> Pule a pergunta e dê nota zero.
-                </h4>
-                <h4>
-                    <span class="highlight">🔹 Zaralho ou falta de respeito não devem ser tolerados. O candidato deve ser expulso e punido, além de ser colocado na lista negra.</span>
-                </h4>
-                <h4>
-                    <span class="highlight">🔹 O print desta prova é obrigatório e deverá estar anexado junto do resultado no Discord.</span>
-                </h4>
+                 <h4><span class="highlight">🔹 Pontuação:</span> Menos de 43 pontos - Reprovado</h4>
+                 <h4><span class="highlight">🔹 Pontuação:</span> 43 a 79 pontos - Estagiário</h4>
+                 <h4><span class="highlight">🔹 Pontuação:</span> 80 pontos ou mais - Agente de 3ª Classe</h4>
+                 <h4><span class="highlight">🔹 Modulação:</span> Se não souber modular, será reprovado.</h4>
+                 <h4><span class="highlight">🔹 Cola/Call:</span> Pergunte a coloração dos códigos. Se acertar, ZERE a nota!</h4>
+                 <h4><span class="highlight">🔹 Barreira:</span> Dificuldade para pular? Pule a pergunta e dê nota zero nela.</h4>
+                 <h4><span class="highlight">🔹 Conduta:</span> Zaralho ou falta de respeito = Expulsão + Punição + Lista Negra.</h4>
+                 <h4><span class="highlight">🔹 Obrigatório:</span> O print desta prova deve ser anexado ao resultado no Discord.</h4>
             </div>
         </div>
     </div>
-    <audio id="button-sound" src="button.wav"></audio>
-    <audio id="print-sound" src="photo.wav"></audio>
+
+    <footer>
+        © <span id="current-year"></span> - Desenvolvido por
+        <a href="https://github.com/AndrinoC" target="_blank" rel="noopener noreferrer">AndrinoC</a>
+    </footer>
+
+    <audio id="button-sound" src="button.wav" preload="auto"></audio>
+    <audio id="print-sound" src="photo.wav" preload="auto"></audio>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
     <script src="scripts.js"></script>
 </body>
-
 </html>
